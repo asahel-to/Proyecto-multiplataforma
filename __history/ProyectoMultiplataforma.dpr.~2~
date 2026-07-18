@@ -1,0 +1,14 @@
+program ProyectoMultiplataforma;
+
+uses
+  Vcl.Forms,
+  Forma_Principal in 'FORMULARIOS\Forma_Principal.pas' {FormaPrincipal};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFormaPrincipal, FormaPrincipal);
+  Application.Run;
+end.

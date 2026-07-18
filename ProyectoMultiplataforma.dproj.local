@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2026/07/17 17:28:44.000.672,=C:\Users\cralos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2026/07/17 17:31:09.000.681,C:\Users\cralos\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\cralos\Documents\Verano 2026\Automastas 2\PROYECTO HÍDRIDO MULTIPLATAFORMA\FORMULARIOS\Forma_Principal.pas</Transaction>
+    <Transaction>2026/07/17 17:31:09.000.681,C:\Users\cralos\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\cralos\Documents\Verano 2026\Automastas 2\PROYECTO HÍDRIDO MULTIPLATAFORMA\FORMULARIOS\Forma_Principal.dfm</Transaction>
+    <Transaction>2026/07/17 17:31:31.000.169,C:\Users\cralos\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\cralos\Documents\Verano 2026\Automastas 2\PROYECTO HÍDRIDO MULTIPLATAFORMA\ProyectoMultiplataforma.dproj</Transaction>
+    <Transaction>2026/07/17 17:53:28.000.938,=C:\Users\cralos\Documents\Verano 2026\Automastas 2\PROYECTO HÍDRIDO MULTIPLATAFORMA\Unit1.pas</Transaction>
+    <Transaction>2026/07/17 17:55:40.000.144,C:\Users\cralos\Documents\Verano 2026\Automastas 2\PROYECTO HÍDRIDO MULTIPLATAFORMA\Unit1.pas=C:\Users\cralos\Documents\Verano 2026\Automastas 2\PROYECTO HÍDRIDO MULTIPLATAFORMA\FORMULARIOS\Forma_LCD.pas</Transaction>
+    <Transaction>2026/07/17 17:55:40.000.144,C:\Users\cralos\Documents\Verano 2026\Automastas 2\PROYECTO HÍDRIDO MULTIPLATAFORMA\Unit1.dfm=C:\Users\cralos\Documents\Verano 2026\Automastas 2\PROYECTO HÍDRIDO MULTIPLATAFORMA\FORMULARIOS\Forma_LCD.dfm</Transaction>
+  </Transactions>
+</BorlandProject>
