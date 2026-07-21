@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
-  Vcl.Imaging.pngimage;
+  Vcl.Imaging.pngimage, shellAPI, Vcl.Buttons;
 
 type
   TFormaPrincipal = class(TForm)
@@ -15,10 +15,18 @@ type
     Image1: TImage;
     Image2: TImage;
     Button2: TButton;
-    Button3: TButton;
-    Button4: TButton;
+    btnArbolE: TBitBtn;
+    semantico: TBitBtn;
+    BitBtn3: TBitBtn;
+    debate: TBitBtn;
+    C3D: TBitBtn;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure btnArbolEClick(Sender: TObject);
+    procedure BitBtn3Click(Sender: TObject);
+    procedure C3DClick(Sender: TObject);
+    procedure semanticoClick(Sender: TObject);
+    procedure debateClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,6 +42,54 @@ implementation
 
 uses Forma_LCD;
 
+
+procedure TFormaPrincipal.semanticoClick(Sender: TObject);
+begin
+         try
+   ShellExecute(FormaLCD.handle,nil,pChar('C:\Users\asahe\OneDrive\Documentos\LyA2\PORYECTO HIBRODO MULTIPLATAFORMA\IMAGENES\semantico.png'),nil,nil,SW_SHOWNORMAL)
+  except
+
+  end;
+end;
+
+procedure TFormaPrincipal.BitBtn3Click(Sender: TObject);
+begin
+
+   try
+   //ShellExecute(FormaLCD.handle,nil,pChar('C:\Users\asahe\OneDrive\Documentos\Compilador_LyA2\compilar_y_ejecutar.bat'),nil,nil,SW_SHOWNORMAL)
+      ShellExecute(FormaLCD.handle,nil,pChar('https://github.com/asahel-to/Compilador_LyA2'),nil,nil,SW_SHOWNORMAL)
+    except
+    end;
+end;
+
+procedure TFormaPrincipal.C3DClick(Sender: TObject);
+begin
+    try
+   ShellExecute(FormaLCD.handle,nil,pChar('C:\Users\asahe\OneDrive\Documentos\LyA2\PORYECTO HIBRODO MULTIPLATAFORMA\tres_direcciones.txt'),nil,nil,SW_SHOWNORMAL)
+  except
+
+  end;
+end;
+
+procedure TFormaPrincipal.debateClick(Sender: TObject);
+begin
+
+  try
+     ShellExecute(FormaLCD.handle,nil,pChar('https://drive.google.com/drive/folders/1L0nGWUYxnbzXItu0QOSb1NHXbVuHtZTX?usp=sharing'),nil,nil,SW_SHOWNORMAL)
+  except
+
+  end;
+end;
+
+procedure TFormaPrincipal.btnArbolEClick(Sender: TObject);
+begin
+
+  try
+   ShellExecute(FormaLCD.handle,nil,pChar('C:\Users\asahe\OneDrive\Documentos\LyA2\PORYECTO HIBRODO MULTIPLATAFORMA\ARBOL EXPRECION JAVA\ArbolExpresiones.jar'),nil,nil,SW_SHOWNORMAL)
+  except
+
+  end;
+end;
 
 procedure TFormaPrincipal.Button1Click(Sender: TObject);
 begin

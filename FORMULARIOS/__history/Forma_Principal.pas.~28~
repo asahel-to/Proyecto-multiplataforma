@@ -1,0 +1,73 @@
+unit Forma_Principal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
+  Vcl.Imaging.pngimage, shellAPI, Vcl.Buttons;
+
+type
+  TFormaPrincipal = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Button1: TButton;
+    Image1: TImage;
+    Image2: TImage;
+    Button2: TButton;
+    btnArbolE: TBitBtn;
+    BitBtn2: TBitBtn;
+    BitBtn3: TBitBtn;
+    BitBtn4: TBitBtn;
+    BitBtn5: TBitBtn;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure btnArbolEClick(Sender: TObject);
+    procedure BitBtn3Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormaPrincipal: TFormaPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+uses Forma_LCD;
+
+
+procedure TFormaPrincipal.BitBtn3Click(Sender: TObject);
+begin
+
+   try
+   ShellExecute(FormaLCD.handle,nil,pChar('C:\Users\asahe\OneDrive\Documentos\Compilador_LyA2\compilar_y_ejecutar.bat'),nil,nil,SW_SHOWNORMAL)
+
+    except
+    end;
+end;
+
+procedure TFormaPrincipal.btnArbolEClick(Sender: TObject);
+begin
+
+  try
+   ShellExecute(FormaLCD.handle,nil,pChar('C:\Users\asahe\OneDrive\Documentos\LyA2\PORYECTO HIBRODO MULTIPLATAFORMA\ARBOL EXPRECION JAVA\ArbolExpresiones.jar'),nil,nil,SW_SHOWNORMAL)
+  except
+
+  end;
+end;
+
+procedure TFormaPrincipal.Button1Click(Sender: TObject);
+begin
+  Application.Terminate;
+end;
+
+procedure TFormaPrincipal.Button2Click(Sender: TObject);
+begin
+      formaLCD.Show;
+end;
+
+end.

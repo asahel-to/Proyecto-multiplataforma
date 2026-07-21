@@ -1,0 +1,131 @@
+Tripletas:
+1 | scan | CALL | "C:/Users/Ana/Desktop"
+2 | "C:/Users/Ana/Documentos" | = | 
+3 | "C:/Users/Ana/Multimedia" | = | 
+4 | "C:/Users/Ana/Backups" | = | 
+5 | 10MB | = | 
+6 | 0 | = | 
+7 | log | CALL | "Iniciando limpieza del escritorio..."
+8 | inicializar_iterador | CALL | escritorio
+9 |  | LABEL | 
+10 | tiene_siguiente | CALL | 8
+11 | 10 | IF_FALSE | 
+12 | siguiente | CALL | 8
+13 | item | ATTR | ext
+14 | ".pdf" | = | 
+15 | 13 | == | 14
+16 | item | ATTR | ext
+17 | ".docx" | = | 
+18 | 16 | == | 17
+19 | item | ATTR | ext
+20 | ".xlsx" | = | 
+21 | 19 | == | 20
+22 | 15 | or | 18
+23 | 22 | or | 21
+24 | 23 | IF_FALSE | 
+25 | move | CALL | item, docs
+26 |  | LABEL | 
+27 | item | ATTR | ext
+28 | ".jpg" | = | 
+29 | 27 | == | 28
+30 | item | ATTR | ext
+31 | ".mp3" | = | 
+32 | 30 | == | 31
+33 | item | ATTR | ext
+34 | ".mp4" | = | 
+35 | 33 | == | 34
+36 | 29 | or | 32
+37 | 36 | or | 35
+38 | 37 | IF_FALSE | 
+39 | move | CALL | item, media
+40 |  | LABEL | 
+41 | item | ATTR | ext
+42 | ".zip" | = | 
+43 | 41 | == | 42
+44 | item | ATTR | ext
+45 | ".rar" | = | 
+46 | 44 | == | 45
+47 | 43 | or | 46
+48 | 47 | IF_FALSE | 
+49 | copy | CALL | item, backups
+50 |  | LABEL | 
+51 | item | ATTR | size
+52 | 51 | > | tamLimite
+53 | item | ATTR | ext
+54 | ".zip" | = | 
+55 | 53 | != | 54
+56 | 52 | or | 55
+57 | 56 | IF_FALSE | 
+58 | "Archivo grande en escritorio: " | + | item.name
+59 | log | CALL | 58
+60 |  | LABEL | 
+61 |  | GOTO | 
+62 |  | LABEL | 
+63 | log | CALL | "Limpieza completada"
+64 | done | CALL | 
+
+Cuádruplos:
+CALL | scan | "C:/Users/Ana/Desktop" | escritorio
+= | "C:/Users/Ana/Documentos" |  | docs
+= | "C:/Users/Ana/Multimedia" |  | media
+= | "C:/Users/Ana/Backups" |  | backups
+= | 10MB |  | tamLimite
+= | 0 |  | item
+CALL | log | "Iniciando limpieza del escritorio..." | 
+CALL | inicializar_iterador | escritorio | t1
+LABEL |  |  | Label1
+CALL | tiene_siguiente | t8 | t2
+IF_FALSE | t10 |  | Label2
+CALL | siguiente | t8 | item
+ATTR | item | ext | t3
+= | ".pdf" |  | t4
+== | t13 | t14 | t5
+ATTR | item | ext | t6
+= | ".docx" |  | t7
+== | t16 | t17 | t8
+ATTR | item | ext | t9
+= | ".xlsx" |  | t10
+== | t19 | t20 | t11
+or | t15 | t18 | t12
+or | t22 | t21 | t13
+IF_FALSE | t23 |  | Label3
+CALL | move | item, docs | 
+LABEL |  |  | Label3
+ATTR | item | ext | t14
+= | ".jpg" |  | t15
+== | t27 | t28 | t16
+ATTR | item | ext | t17
+= | ".mp3" |  | t18
+== | t30 | t31 | t19
+ATTR | item | ext | t20
+= | ".mp4" |  | t21
+== | t33 | t34 | t22
+or | t29 | t32 | t23
+or | t36 | t35 | t24
+IF_FALSE | t37 |  | Label4
+CALL | move | item, media | 
+LABEL |  |  | Label4
+ATTR | item | ext | t25
+= | ".zip" |  | t26
+== | t41 | t42 | t27
+ATTR | item | ext | t28
+= | ".rar" |  | t29
+== | t44 | t45 | t30
+or | t43 | t46 | t31
+IF_FALSE | t47 |  | Label5
+CALL | copy | item, backups | 
+LABEL |  |  | Label5
+ATTR | item | size | t32
+> | t51 | tamLimite | t33
+ATTR | item | ext | t34
+= | ".zip" |  | t35
+!= | t53 | t54 | t36
+or | t52 | t55 | t37
+IF_FALSE | t56 |  | Label6
++ | "Archivo grande en escritorio: " | item.name | t38
+CALL | log | t58 | 
+LABEL |  |  | Label6
+GOTO |  |  | Label1
+LABEL |  |  | Label2
+CALL | log | "Limpieza completada" | 
+CALL | done |  | 
